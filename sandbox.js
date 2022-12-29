@@ -25,15 +25,27 @@ console.log(1);
 console.log(2);
 
 //Callback Hell, try to avoid nesting functions, use promises instead
-getTodos('todos/todos.json', (err, data) => {
-    console.log(data);
-    getTodos('todos/todos2.json', (err, data) => {
-      console.log(data);
-      getTodos('todos/todos3.json', (err, data) => {
-        console.log(data);
-      });
-    });
-});
+// getTodos('todos/todos.json', (err, data) => {
+//     console.log(data);
+//     getTodos('todos/todos2.json', (err, data) => {
+//       console.log(data);
+//       getTodos('todos/todos3.json', (err, data) => {
+//         console.log(data);
+//       });
+//     });
+// });
+
+//fake promise, no real request made, just as an example
+const getSomething = () => {
+  return new Promise((resolve, reject) => {
+    resolve('something new');
+  });
+};
+
+//.then can be added to a promises
+getSomething().then((data) => {
+  console.log(data);
+})
 
 console.log(3);
 console.log(4);
