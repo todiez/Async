@@ -1,7 +1,7 @@
 const getTodos = (url) => {
-  //create Promise:
+  //create Promise
   return new Promise((resolve, reject) => {
-    // create request object, it is built in JS
+    // create request object, it is built in JS ---> oldSchool, fetch is newer
     const request = new XMLHttpRequest();
 
     //fires every time the state changes in the request
