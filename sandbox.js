@@ -1,4 +1,7 @@
 const getTodos = (url, callbackFunction) => {
+
+  //create Promise:
+  return new Promise(() => {
   // create request object, it is built in JS
   const request = new XMLHttpRequest();
 
@@ -19,6 +22,8 @@ const getTodos = (url, callbackFunction) => {
   //open takes two arguments, first is a string and kind of, second is the endpoint
   request.open("GET", url);
   request.send();
+
+  });
 };
 
 console.log(1);
@@ -39,13 +44,24 @@ console.log(2);
 const getSomething = () => {
   return new Promise((resolve, reject) => {
     resolve('something new');
+    reject('error and rejected');
   });
 };
 
 //.then can be added to a promises
 getSomething().then((data) => {
   console.log(data);
+}, (err) => {
+  console.log(err);
+});
+
+//more elegant solution with catch:
+getSomething().then(data => {
+  console.log(data);
+}).catch(err =>{
+  console.log(err)
 })
+
 
 console.log(3);
 console.log(4);
