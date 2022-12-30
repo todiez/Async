@@ -8,6 +8,7 @@ const getTodos = async () => {
   //fetch return a promise, await stops from assigning to response till
   //the promise is resolved
   console.log("async function started");
+  
   const response = await fetch("todos/todofs.json");
   if (response.status !== 200) {
     console.log("Error fetching data");
