@@ -9,7 +9,7 @@ const getTodos = async () => {
   //the promise is resolved
   console.log("async function started");
   
-  const response = await fetch("todos/todofs.json");
+  const response = await fetch("todos/todos.json");
   if (response.status !== 200) {
     console.log("Error fetching data");
     throw new Error("Cannot fetch data"); //creating a new Error Object
